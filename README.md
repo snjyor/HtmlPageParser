@@ -1,2 +1,2 @@
-# HtmlParser
-A generic HTML parser
+# HtmlPageParser
+A generic HTML page parser
