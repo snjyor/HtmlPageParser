@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: HtmlPageParser
+Version: 0.0.1
+Summary: A generic HTML page parser
+Author-email: Jeffrey Yang <snjyor@163.com>
+Project-URL: Homepage, https://github.com/snjyor/HtmlParser
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# HtmlPageParser
+A generic HTML page parser

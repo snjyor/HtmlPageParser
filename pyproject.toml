@@ -17,4 +17,4 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/snjyor/HtmlParser"
+"Homepage" = "https://github.com/snjyor/HtmlPageParser"
