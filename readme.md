@@ -1,8 +1,14 @@
 # HtmlPageParser
 通用HTML页面内容解析器
 
-## example
+## 安装
+```shell
+pip install HtmlPageParser
+```
+
+## 使用示例
 ```python
+# 爬取页面内容
 from HtmlParser.src.parser import Parser
 with open("test.html", "r", encoding="utf-8") as f:
     html = f.read()
@@ -16,6 +22,16 @@ xpath_css = [
 ]
 data = client.parser(html, css_selector="#content > div.post_body", xpath_css=xpath_css)
 print(data)
+
+# json结构数据转为markdown格式
+import json
+from HtmlParser.src.json2markdown import Json2Markdown
+with open("json_data.json", 'r', encoding='utf-8') as f:
+    json_data = json.load(f)
+J2M = Json2Markdown()
+markdown_data = J2M.json2markdown(json_data)
+print(markdown_data)
+
 ```
 
 
