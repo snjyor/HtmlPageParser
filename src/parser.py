@@ -10,13 +10,13 @@ class Parser(HtmlLabels):
         self.data = []
 
     def deep_parser(self, xpath_css, group_str):
-        for each_xpath, each_css in xpath_css.items():
+        for each_xpath, each_css in xpath_css[0].items():
             deeper_tag = etree.HTML(group_str)
             inner_tag = deeper_tag.xpath(each_xpath)
             if inner_tag:
                 self.parser(group_str, each_css, xpath_css={})
+                xpath_css.pop(0)
                 break
-            break
 
     def parser(self, html, css_selector, xpath_css=None):
         if xpath_css is None:
@@ -36,13 +36,7 @@ class Parser(HtmlLabels):
             content_dict['link'] = []
             group_str = str(group)
             if xpath_css:
-                for each_xpath, each_css in xpath_css[0].items():
-                    deeper_tag = etree.HTML(group_str)
-                    inner_tag = deeper_tag.xpath(each_xpath)
-                    if inner_tag:
-                        self.parser(group_str, each_css, xpath_css={})
-                        xpath_css.pop(0)
-                        break
+                self.deep_parser(xpath_css, group_str)
 
             logging.info(f"current content dict: {content_dict}")
             tag_type_list = self.get_tag_type(group_str)
@@ -84,16 +78,3 @@ class Parser(HtmlLabels):
         return groups
 
 
-if __name__ == '__main__':
-    with open("test.html", "r", encoding="utf-8") as f:
-        html = f.read()
-    client = Parser(base_url="https://www.163.com/")
-    xpath_css = [
-        {".//p[@class='f_center']": ".f_center"},
-        {".//p[@class='f_center']": ".f_center"},
-        {".//p[@class='f_center']": ".f_center"},
-        {".//p[@class='f_center']": ".f_center"},
-        {".//p[@class='f_center']": ".f_center"}
-    ]
-    data = client.parser(html, css_selector="#content > div.post_body", xpath_css=xpath_css)
-    print(data)
