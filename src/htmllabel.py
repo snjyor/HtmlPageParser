@@ -1,7 +1,6 @@
 import logging
 import re
 import unicodedata
-
 from bs4 import BeautifulSoup, NavigableString
 from lxml import etree
 
@@ -35,7 +34,7 @@ class HtmlLabels:
         return:  video信息字典
         """
         video_selector = etree.HTML(group_str)
-        video_srcs = video_selector.xpath(f".//video/source/@{self.video_attr}")
+        video_srcs = video_selector.xpath(f".//video//@{self.video_attr}")
         link_data = {}
         for src in video_srcs:
             src = src if src.startswith("http") else self.base_url + src

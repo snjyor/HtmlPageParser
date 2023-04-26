@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup, NavigableString
 import logging
 from lxml import etree
-from htmllabel import HtmlLabels
+from .htmllabel import HtmlLabels
 
 
 class Parser(HtmlLabels):
@@ -44,6 +44,9 @@ class Parser(HtmlLabels):
             if "tag_img" in tag_type_list:
                 link_data = self.exist_img_label(group_str)
                 content_dict['link'].append(link_data)
+            if "tag_video" in tag_type_list:
+                link_data = self.exist_video_label(group_str)
+                content_dict['link'].append(link_data)
             if "tag_table" in tag_type_list:
                 table_data = self.exist_table_label(group_str)
                 content_dict = table_data
@@ -78,16 +81,3 @@ class Parser(HtmlLabels):
         return groups
 
 
-if __name__ == '__main__':
-    with open("../tests/test.html", "r", encoding="utf-8") as f:
-        html = f.read()
-    client = Parser(base_url="https://www.163.com/")
-    xpath_css = [
-        {".//p[@class='f_center']": ".f_center"},
-        {".//p[@class='f_center']": ".f_center"},
-        {".//p[@class='f_center']": ".f_center"},
-        {".//p[@class='f_center']": ".f_center"},
-        {".//p[@class='f_center']": ".f_center"}
-    ]
-    data = client.parser(html, css_selector="#content > div.post_body", xpath_css=xpath_css)
-    print(data)
