@@ -3,7 +3,7 @@
 
 ## example
 ```python
-from HtmlParser.parser import Parser
+from HtmlParser.src.parser import Parser
 with open("test.html", "r", encoding="utf-8") as f:
     html = f.read()
 client = Parser(base_url="https://www.163.com/")
