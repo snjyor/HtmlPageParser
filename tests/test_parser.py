@@ -1,3 +1,5 @@
+import json
+
 from src.parser import Parser
 
 def test_parser():
@@ -18,6 +20,8 @@ def test_parser():
     ]
     data = client.parser(html, css_selector="#content > div.post_body", xpath_css=xpath_css)
     print(data)
+    with open("json_data.json", "w", encoding="utf-8") as f:
+        f.write(json.dumps(data, ensure_ascii=False, indent=4))
 
 
 if __name__ == '__main__':
