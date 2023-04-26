@@ -1,9 +1,0 @@
-LICENSE
-README.md
-pyproject.toml
-src/__init__.py
-src/main.py
-src/HtmlPageParser.egg-info/PKG-INFO
-src/HtmlPageParser.egg-info/SOURCES.txt
-src/HtmlPageParser.egg-info/dependency_links.txt
-src/HtmlPageParser.egg-info/top_level.txt

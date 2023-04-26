@@ -1,3 +1,0 @@
-HtmlPageParser
-__init__
-main
