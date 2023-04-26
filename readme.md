@@ -9,7 +9,7 @@ pip install HtmlPageParser
 ## 使用示例
 ```python
 # 爬取页面内容
-from HtmlParser.src.parser import Parser
+from HtmlPageParser.src.parser import Parser
 with open("test.html", "r", encoding="utf-8") as f:
     html = f.read()
 client = Parser(base_url="https://www.163.com/")
@@ -25,7 +25,7 @@ print(data)
 
 # json结构数据转为markdown格式
 import json
-from HtmlParser.src.json2markdown import Json2Markdown
+from HtmlPageParser.src.json2markdown import Json2Markdown
 with open("json_data.json", 'r', encoding='utf-8') as f:
     json_data = json.load(f)
 J2M = Json2Markdown()
