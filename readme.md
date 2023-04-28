@@ -1,5 +1,9 @@
 # HtmlPageParser
-通用HTML页面内容解析器
+通用HTML页面内容解析器,分别有html 转 json功能和json转 markdown 功能，两功能联用可实现 html 转 markdown 的功能。
+html to json，and json to markdown
+so
+html to markdown
+
 
 ## 安装
 ```shell
