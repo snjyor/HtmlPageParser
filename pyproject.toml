@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 [project]
 name = "HtmlPageParser"
-version = "0.0.3"
+version = "0.0.4"
 authors = [
-  { name="Jeffrey Yang", email="snjyor@163.com" },
+  { name="snjyor", email="snjyor@163.com" },
 ]
 description = "A generic HTML page parser"
 readme = "readme.md"
