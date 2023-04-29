@@ -98,7 +98,6 @@ xpath_css = [
                 "start": 0,
                 "end": 8,
                 "origin_url": "https://www.minsalud.gob.bo/1089-sorata-cumple-con-la-implementacion-de-la-politica-sanitaria-safci-encaminada-por-el-ministerio-de-salud?tmpl=component&print=1&layout=default",
-                "url": "https://www.minsalud.gob.bo/1089-sorata-cumple-con-la-implementacion-de-la-politica-sanitaria-safci-encaminada-por-el-ministerio-de-salud?tmpl=component&print=1&layout=default"
             }
         ]
     },
@@ -108,7 +107,6 @@ xpath_css = [
         "link": [
             {
                 "origin_url": "https://www.minsalud.gob.bo/images/noticias16/sorata2.gif",
-                "url": "Bolivia_Regulation/Files//8b36d2ab18f5fed475dffa42b7e0bbe7."
             }
         ]
     },
